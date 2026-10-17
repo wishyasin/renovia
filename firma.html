@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Renovia firma profili · Renovia</title>
+<meta name="description" content="Size Renovia'daki bir müteahhit firmanın profili gönderildi.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@600;700&family=Schibsted+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="index.html">Renovia</a>
+  <nav><a href="gizlilik.html">Gizlilik</a><a href="kvkk.html">KVKK</a><a href="kosullar.html">Koşullar</a><a href="hesap-silme.html">Hesap silme</a><a href="destek.html">Destek</a></nav>
+</header>
+<main>
+
+<article class="doc handoff">
+  <h1>Renovia firma profili</h1>
+  <p class="lead">Size Renovia'daki bir müteahhit firmanın profili gönderildi.</p>
+  <p><a class="button" id="open" href="#">Renovia'da Aç</a></p>
+  <p class="meta" id="invalid" hidden>Bu bağlantı eksik ya da bozuk görünüyor. Gönderen kişiden yeni bir bağlantı isteyin.</p>
+  <section><h2>Uygulama yüklü değil mi?</h2>
+    <p>Renovia iOS ve Android için yakında mağazalarda. Yükledikten sonra bu bağlantıya yeniden dokunun.</p></section>
+</article>
+<script>
+  (function () {
+    var v = new URLSearchParams(location.search).get('id') || '';
+    if (!/^[0-9a-fA-F-]{36}$/.test(v)) {
+      document.getElementById('open').hidden = true;
+      document.getElementById('invalid').hidden = false;
+      return;
+    }
+    var target = 'renovia://firma/' + encodeURIComponent(v);
+    document.getElementById('open').href = target;
+    location.href = target;
+  })();
+</script>
+</main>
+<footer>
+  <p>© 2026 Renovia · Yasin Özçelik</p>
+</footer>
+</body>
+</html>
